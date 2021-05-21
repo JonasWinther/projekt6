@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="missions.css" />
+    <script src="missions.js" defer></script>
+    <script src="navigation.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <div class="navigation">
+        <div class="navigationflex">
+          <img src="images/logo.png" />
+          <h2 id="view" onclick="overview()">Mission Overview</h2>
+          <h2 id="mislist" onclick="overviewlist()">Mission List</h2>
+        </div>
+      </div>
+    </nav>
+    <div class="overview">
+      <h1>Mission Overview</h1>
+      <ul>
+        <li>
+          <div class="card1">
+            <div id="m1Card" class="cards" onclick="openTab('m1')">
+              <h2>Testing QuadSAT 1</h2>
+              <p class="summary">
+                Antenna testing for QuadSAT at HCA Lufthavn.
+              </p>
+            </div>
+            <div id="m1Tab" class="missionTab" onclick="openTab('m1')">
+              <h2>Testing QuadSAT 1</h2>
+              <p class="summary">
+                Antenna testing for QuadSAT at HCA Lufthavn.
+              </p>
+              <br /><br />
+              <p>
+                Location: Odense <br />
+                Operator: Jonas Winther <br />
+                Date: 18-05-2021
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card2">
+            <div id="m2Card" class="cards" onclick="openTab('m2')">
+              <h2>Testing QuadSAT 2</h2>
+              <p class="summary">
+                Antenna testing for QuadSAT at HCA Lufthavn.
+              </p>
+            </div>
+            <div id="m2Tab" class="missionTab" onclick="openTab('m2')">
+              <h2>Testing QuadSAT 2</h2>
+              <p class="summary">
+                Antenna testing for QuadSAT at HCA Lufthavn.
+              </p>
+              <br /><br />
+              <p>
+                Location: Odense <br />
+                Operator: Jonas Winther <br />
+                Date: 19-05-2021
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card3">
+            <div id="m3Card" class="cards" onclick="openTab('m3')">
+              <h2>Testing QuadSAT 3</h2>
+              <p class="summary">
+                Antenna testing for QuadSAT at HCA Lufthavn.
+              </p>
+            </div>
+            <div id="m3Tab" class="missionTab" onclick="openTab('m3')">
+              <h2>Testing QuadSAT 3</h2>
+              <p class="summary">
+                Antenna testing for QuadSAT at HCA Lufthavn.
+              </p>
+              <br /><br />
+              <p>
+                Location: Odense <br />
+                Operator: Jonas Winther <br />
+                Date: 21-05-2021
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="list">
+      <h1>Mission List</h1>
+      <table id="missionlist">
+        <thead>
+          <tr>
+            <th class="theader">Mission Name</th>
+            <th class="theader">Operator</th>
+            <th class="theader">Location</th>
+            <th class="theader">Date</th>
+            <th id="scroll"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Testing QuadSAT 1</td>
+            <td>Jonas Winther</td>
+            <td>Odense</td>
+            <td>18-05-2021</td>
+          </tr>
+          <tr>
+            <td>Testing QuadSAT 2</td>
+            <td>Jonas Winther</td>
+            <td>Odense</td>
+            <td>19-05-2021</td>
+          </tr>
+          <tr>
+            <td>Testing QuadSAT 3</td>
+            <td>Jonas Winther</td>
+            <td>Odense</td>
+            <td>21-05-2021</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
