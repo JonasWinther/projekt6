@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+
+    <link rel="stylesheet" href="sorting.css" />
+  </head>
+
+  <body>
+    <ul id="cards">
+      <li>
+        <span class="numbsort">a</span>
+        <div class="card1">
+          <div id="m1Card" class="cards" onclick="openTab('m1')">
+            <h2>Ged</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+          </div>
+          <div id="m1Tab" class="missionTab" onclick="openTab('m1')">
+            <h2>Ged</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+            <br /><br />
+            <p>
+              Location: Odense <br />
+              Operator: Jonas Winther <br />
+              Date: 18-05-2021
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <span class="numbsort">c</span>
+        <div class="card2">
+          <div id="m2Card" class="cards" onclick="openTab('m2')">
+            <h2>Abe</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+          </div>
+          <div id="m2Tab" class="missionTab" onclick="openTab('m2')">
+            <h2>Abe</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+            <br /><br />
+            <p>
+              Location: Odense <br />
+              Operator: Jonas Winther <br />
+              Date: 19-05-2021
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <span class="numbsort">b</span>
+        <div class="card3">
+          <div id="m3Card" class="cards" onclick="openTab('m3')">
+            <h2>Testing QuadSAT 3</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+          </div>
+          <div id="m3Tab" class="missionTab" onclick="openTab('m3')">
+            <h2>Testing QuadSAT 3</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+            <br /><br />
+            <p>
+              Location: Odense <br />
+              Operator: Jonas Winther <br />
+              Date: 21-05-2021
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="container">
+      <button class="click">Sort by...</button>
+
+      <div class="list">
+        <button class="links">Newest</button>
+
+        <button onclick="sortList2()" class="links">Oldest</button>
+
+        <button onclick="sortList1()" class="links">A-Z</button>
+      </div>
+    </div>
+
+    <script>
+      function sortList1() {
+        var list, i, switching, b, shouldSwitch;
+        list = document.getElementById("cards");
+        switching = true;
+        /* Make a loop that will continue until
+no switching has been done: */
+        while (switching) {
+          // Start by saying: no switching is done:
+          switching = false;
+          b = list.getElementsByTagName("DIV");
+          // Loop through all list items:
+          for (i = 0; i < b.length - 1; i++) {
+            // Start by saying there should be no switching:
+            shouldSwitch = false;
+            /* Check if the next item should
+    switch place with the current item: */
+            if (
+              b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()
+            ) {
+              /* If next item is alphabetically lower than current item,
+      mark as a switch and break the loop: */
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            /* If a switch has been marked, make the switch
+    and mark the switch as done: */
+            b[i].parentNode.insertBefore(b[i + 1], b[i]);
+            switching = true;
+          }
+        }
+      }
+    </script>
+
+    <script>
+      function sortList2() {
+        var list, i, switching, b, shouldSwitch;
+        list = document.getElementById("cards");
+        switching = true;
+        /* Make a loop that will continue until
+no switching has been done: */
+        while (switching) {
+          // Start by saying: no switching is done:
+          switching = false;
+          b = list.getElementsByTagName("SPAN");
+          // Loop through all list items:
+          for (i = 0; i < b.length - 1; i++) {
+            // Start by saying there should be no switching:
+            shouldSwitch = false;
+            /* Check if the next item should
+    switch place with the current item: */
+            if (
+              b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()
+            ) {
+              /* If next item is alphabetically lower than current item,
+      mark as a switch and break the loop: */
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            /* If a switch has been marked, make the switch
+    and mark the switch as done: */
+            b[i].parentNode.insertBefore(b[i + 1], b[i]);
+            switching = true;
+          }
+        }
+      }
+    </script>
+    <script>
+      let click = document.querySelector(".click");
+
+      let list = document.querySelector(".list");
+
+      click.addEventListener("click", () => {
+        list.classList.toggle("newlist");
+      });
+    </script>
+  </body>
+</html>

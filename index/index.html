@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="QuadSAT software UI Design" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="js/missions.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/sorting.js" defer></script>
+    <script src="js/modalsettings.js" defer></script>
+    <script src="js/launch.js" defer></script>
+    <script src="js/create.js" defer></script>
+    <title>QuadSAT software Design</title>
+  </head>
+  <body>
+    <nav>
+      <div class="navigation">
+        <div class="navigationflex">
+          <img src="images/logo.png" alt="QuadSAT" />
+          <h2 id="view" onclick="overview()">Mission Overview</h2>
+          <h2 id="mislist" onclick="overviewlist()">Mission List</h2>
+        </div>
+      </div>
+    </nav>
+    <div id="modalSet" class="modalset">
+      <div class="modalsetcontent">
+        <div class="modalheaderflex">
+          <div id="missioninformation" onclick="misinfo()">
+            <h2 id="mish2">Mission Information</h2>
+          </div>
+          <div id="droneinfo" onclick="droneinfo()">
+            <h2 id="droneh2">Drone Information</h2>
+          </div>
+          <div id="calibrations" onclick="calibrations()">
+            <h2 id="calih2">Calibrations</h2>
+          </div>
+          <span class="closemodal">&times;</span>
+        </div>
+        <div class="missioninformation">
+          <div id="misinformation">
+            <div class="headergrid">
+              <h2>Mission Name</h2>
+            </div>
+            <div class="textgrid">
+              <p id="missionName">Quadsat testing 1</p>
+            </div>
+            <div class="headergrid">
+              <h2>Location</h2>
+            </div>
+            <div class="textgrid">
+              <p id="missionLoca">Odense</p>
+            </div>
+            <div class="headergrid">
+              <h2>Operator</h2>
+            </div>
+            <div class="textgrid">
+              <p id="missionOper">Jonas Winther</p>
+            </div>
+            <div class="headergrid">
+              <h2>Date</h2>
+            </div>
+            <div class="textgrid">
+              <p id="missionDate">18-05-2021</p>
+            </div>
+          </div>
+        </div>
+        <div id="droneinformation">
+          <div class="headergrid">
+            <h2>Drone</h2>
+          </div>
+          <div class="textgrid">
+            <p>UCL-X</p>
+          </div>
+          <div class="headergrid">
+            <h2>Payload</h2>
+          </div>
+          <div class="textgrid">
+            <p>UCL-Y</p>
+          </div>
+          <div class="headergrid">
+            <h2>Connection Status</h2>
+          </div>
+          <div class="connectgrid">
+            <p id="connected" onclick="disconnect()">Connected</p>
+            <p id="disconnected" onclick="connect()">Disconnected</p>
+          </div>
+        </div>
+        <div id="calibrationinfo">
+          <div class="calileft">
+            <div class="headergrid">
+              <h2>Start</h2>
+            </div>
+            <div class="textgrid">
+              <p>-6.00&#176;</p>
+            </div>
+            <div class="arrowgrid">
+              <span>&#139;</span>
+              <span>&#155;</span>
+            </div>
+            <div class="headergrid">
+              <h2>Stop</h2>
+            </div>
+            <div class="textgrid">
+              <p>6.00&#176;</p>
+            </div>
+            <div class="arrowgrid">
+              <span>&#139;</span>
+              <span>&#155;</span>
+            </div>
+            <div class="headergrid">
+              <h2>Step</h2>
+            </div>
+            <div class="textgrid">
+              <p>0.06&#176;</p>
+            </div>
+            <div class="arrowgrid">
+              <span>&#139;</span>
+              <span>&#155;</span>
+            </div>
+            <div class="headergrid">
+              <h2>Buffer</h2>
+            </div>
+            <div class="textgrid">
+              <p>1.00&#176;</p>
+            </div>
+            <div class="arrowgrid">
+              <span>&#139;</span>
+              <span>&#155;</span>
+            </div>
+            <div class="headergrid">
+              <h2>Speed</h2>
+            </div>
+            <div class="textgrid">
+              <p>5.00 m/s</p>
+            </div>
+            <div class="arrowgrid">
+              <span>&#139;</span>
+              <span>&#155;</span>
+            </div>
+            <div class="headergrid">
+              <h2>Radius</h2>
+            </div>
+            <div class="textgrid">
+              <p>250.00 m</p>
+            </div>
+            <div class="arrowgrid">
+              <span>&#139;</span>
+              <span>&#155;</span>
+            </div>
+          </div>
+          <div class="caliline"></div>
+          <div class="caliright">
+            <div class="headergrid">
+              <h2>Plane</h2>
+            </div>
+            <div class="calirightgrid">
+              <span class="dot"
+                ><span
+                  style="background-color: rgb(255, 255, 255)"
+                  id="azi"
+                  class="innerdot"
+                  onclick="azimuth()"
+                ></span
+              ></span>
+              <div class="headergrid">
+                <h2>Azimuth</h2>
+              </div>
+              <span class="dot"
+                ><span
+                  style="background-color: rgb(255, 255, 255)"
+                  id="ele"
+                  class="innerdot"
+                  onclick="elevation()"
+                ></span
+              ></span>
+              <div class="headergrid">
+                <h2>Elevation</h2>
+              </div>
+            </div>
+            <div class="calilinehori"></div>
+            <div class="headergrid">
+              <h2>Direction</h2>
+            </div>
+            <div class="calirightgrid">
+              <span class="dot"
+                ><span
+                  style="background-color: rgb(255, 255, 255)"
+                  id="incre"
+                  class="innerdot"
+                  onclick="increasing()"
+                ></span
+              ></span>
+              <div class="headergrid">
+                <h2>Increasing</h2>
+              </div>
+              <span class="dot"
+                ><span
+                  style="background-color: rgb(255, 255, 255)"
+                  id="decre"
+                  class="innerdot"
+                  onclick="decreasing()"
+                ></span
+              ></span>
+              <div class="headergrid">
+                <h2>Decreasing</h2>
+              </div>
+            </div>
+            <div class="calilinehori"></div>
+            <div class="headergrid">
+              <h2>Polarization</h2>
+            </div>
+            <div class="calirightgrid">
+              <span class="dot"
+                ><span
+                  style="background-color: rgb(255, 255, 255)"
+                  id="co"
+                  class="innerdot"
+                  onclick="coclick()"
+                ></span
+              ></span>
+              <div class="headergrid">
+                <h2>Co</h2>
+              </div>
+              <span class="dot"
+                ><span
+                  style="background-color: rgb(255, 255, 255)"
+                  id="cross"
+                  class="innerdot"
+                  onclick="crossclick()"
+                ></span
+              ></span>
+              <div class="headergrid">
+                <h2>Cross</h2>
+              </div>
+            </div>
+            <div class="calilinehori"></div>
+            <div class="headergrid">
+              <h2>Bulk</h2>
+            </div>
+            <div class="calirightgrid3">
+              <div class="headergrid">
+                <h2>Count:</h2>
+              </div>
+              <div class="textgrid">
+                <p>4</p>
+              </div>
+              <div class="arrowgrid">
+                <span>&#139;</span>
+                <span>&#155;</span>
+              </div>
+            </div>
+            <div class="calirightgrid2">
+              <span class="dot"
+                ><span
+                  style="background-color: rgb(255, 255, 255)"
+                  id="alter"
+                  class="innerdot"
+                  onclick="alternating()"
+                ></span
+              ></span>
+              <div class="headergrid">
+                <h2>Alternating direction</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottommodal">
+          <div id="save" class="save">
+            <h2>Save Changes</h2>
+          </div>
+          <div id="cancel" class="cancel">
+            <h2>Cancel</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modalLaunch">
+      <div class="launchcontent">
+        <div class="launchHeader">
+          <h1>Launching</h1>
+          <span id="clsLaunch" class="closemodal">&times;</span>
+        </div>
+        <p>Are you sure you want to launch, <span id="launchName"></span>?</p>
+        <div class="launchFooter">
+          <div id="launchYes">
+            <h2>Yes</h2>
+          </div>
+          <div id="launchNo">
+            <h2>No</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="underCon">
+      <h1>Under Construction</h1>
+      <img
+        src="images/construction.png"
+        width="400px"
+        height="auto"
+        alt="Under Construction"
+      />
+      <div id="return">
+        <h2>Return</h2>
+      </div>
+    </div>
+    <div id="createPage">
+      <div class="createcontent">
+        <div class="createHeader">
+          <h1>Create a new mission</h1>
+          <span id="clsCreate" class="closemodal">&times;</span>
+        </div>
+        <div id="createinfo">
+          <div class="headergrid">
+            <h2>Mission Name</h2>
+          </div>
+          <div class="textgrid">
+            <input type="text" name="mname" placeholder="Mission name" />
+          </div>
+          <div class="headergrid">
+            <h2>Location</h2>
+          </div>
+          <div class="textgrid">
+            <input type="text" name="mloca" placeholder="Location" />
+          </div>
+          <div class="headergrid">
+            <h2>Operator</h2>
+          </div>
+          <div class="textgrid">
+            <input type="text" name="moper" placeholder="Operator Name" />
+          </div>
+          <div class="headergrid">
+            <h2>Date</h2>
+          </div>
+          <div class="textgrid">
+            <input type="text" name="mdate" placeholder="Date" />
+          </div>
+        </div>
+        <div class="bottommodal">
+          <div id="create">
+            <h2>Create</h2>
+          </div>
+          <div id="createCancel">
+            <h2>Cancel</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="hideview" class="overview">
+      <div class="overviewflex">
+        <h1>Mission Overview</h1>
+        <div class="container">
+          <button class="click">Sort by...</button>
+
+          <div id="dropdown" class="list">
+            <button class="links">Newest</button>
+
+            <button class="links">Oldest</button>
+
+            <button onclick="sortList1()" class="links">A-Z</button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel">
+        <span class="arrow">&#139;</span>
+        <span class="arrow">&#155;</span>
+      </div>
+      <section id="cards">
+        <div class="card">
+          <div id="m1Card" class="cards" onclick="openTab('m1')">
+            <h2>Quadsat testing 1</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+          </div>
+          <div id="m1Tab" class="missionTab" onclick="openTab('m1')">
+            <h2>Quadsat testing 1</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+            <br /><br />
+            <p>
+              Location: Odense <br />
+              Operator: Jonas Winther <br />
+              Date: 18-05-2021
+            </p>
+            <div class="btns">
+              <div
+                id="m1Launch"
+                class="setbtn"
+                onclick="openLaunch('Quadsat testing 1')"
+              >
+                <img class="setimg" src="images/launchblue.png" alt="Launch" />
+              </div>
+              <div
+                id="m1Btn"
+                class="setbtn"
+                onclick="openModal('Quadsat testing 1', 'Odense', 'Jonas Winther', '18-05-2021')"
+              >
+                <img
+                  class="setimg"
+                  src="images/settingsblue.png"
+                  alt="Settings"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div id="m2Card" class="cards" onclick="openTab('m2')">
+            <h2>Testing at HCA</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+          </div>
+          <div id="m2Tab" class="missionTab" onclick="openTab('m2')">
+            <h2>Testing at HCA</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+            <br /><br />
+            <p>
+              Location: Odense <br />
+              Operator: Jonas Winther <br />
+              Date: 19-05-2021
+            </p>
+            <div class="btns">
+              <div
+                id="m2Launch"
+                class="setbtn"
+                onclick="openLaunch('Testing at HCA')"
+              >
+                <img class="setimg" src="images/launchblue.png" alt="Launch" />
+              </div>
+              <div
+                id="m2Btn"
+                class="setbtn"
+                onclick="openModal('Testing at HCA', 'Odense', 'Jonas Winther', '19-05-2021')"
+              >
+                <img
+                  class="setimg"
+                  src="images/settingsblue.png"
+                  alt="Settings"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div id="m3Card" class="cards" onclick="openTab('m3')">
+            <h2>SpaceX testing</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+          </div>
+          <div id="m3Tab" class="missionTab" onclick="openTab('m3')">
+            <h2>SpaceX testing</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+            <br /><br />
+            <p>
+              Location: Hawthorne <br />
+              Operator: Jonas Winther <br />
+              Date: 21-05-2021
+            </p>
+            <div class="btns">
+              <div
+                id="m3Launch"
+                class="setbtn"
+                onclick="openLaunch('SpaceX testing')"
+              >
+                <img class="setimg" src="images/launchblue.png" alt="Launch" />
+              </div>
+              <div
+                id="m3Btn"
+                class="setbtn"
+                onclick="openModal('SpaceX testing', 'Hawthorne', 'Jonas Winther', '21-05-2021')"
+              >
+                <img
+                  class="setimg"
+                  src="images/settingsblue.png"
+                  alt="Settings"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div id="m4Card" class="cards" onclick="openTab('m4')">
+            <h2>Swedish testing facility</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+          </div>
+          <div id="m4Tab" class="missionTab" onclick="openTab('m4')">
+            <h2>Swedish testing facility</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+            <br /><br />
+            <p>
+              Location: Malmö <br />
+              Operator: Jonas Winther <br />
+              Date: 22-05-2021
+            </p>
+            <div class="btns">
+              <div
+                id="m4Launch"
+                class="setbtn"
+                onclick="openLaunch('Swedish testing facility')"
+              >
+                <img class="setimg" src="images/launchblue.png" alt="Lauch" />
+              </div>
+              <div
+                id="m4Btn"
+                class="setbtn"
+                onclick="openModal('Swedish testing facility', 'Malmö', 'Jonas Winther', '22-05-2021')"
+              >
+                <img
+                  class="setimg"
+                  src="images/settingsblue.png"
+                  alt="Settings"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div id="m5Card" class="cards" onclick="openTab('m5')">
+            <h2>American Antenna testing</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+          </div>
+          <div id="m5Tab" class="missionTab" onclick="openTab('m5')">
+            <h2>American Antenna testing</h2>
+            <p class="summary">Antenna testing for QuadSAT at HCA Lufthavn.</p>
+            <br /><br />
+            <p>
+              Location: Boston <br />
+              Operator: Jonas Winther <br />
+              Date: 23-05-2021
+            </p>
+            <div class="btns">
+              <div
+                id="m5Launch"
+                class="setbtn"
+                onclick="openLaunch('American Antenna testing')"
+              >
+                <img class="setimg" src="images/launchblue.png" alt="launch" />
+              </div>
+              <div
+                id="m5Btn"
+                class="setbtn"
+                onclick="openModal('American Antenna testing', 'Boston', 'Jonas Winther', '23-05-2021')"
+              >
+                <img
+                  class="setimg"
+                  src="images/settingsblue.png"
+                  alt="Settings"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div id="createBtn" onclick="openCreate()">
+        <img src="images/create.png" alt="create" class="createBtn" />
+      </div>
+    </div>
+    <div class="mislist">
+      <h1>Mission List</h1>
+      <table id="missionlist">
+        <thead>
+          <tr>
+            <th class="theader">Mission Name</th>
+            <th class="theader">Operator</th>
+            <th class="theader">Location</th>
+            <th class="theader">Date</th>
+            <th id="scroll"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Quadsat testing 1</td>
+            <td>Jonas Winther</td>
+            <td>Odense</td>
+            <td>18-05-2021</td>
+          </tr>
+          <tr>
+            <td>Testing at HCA</td>
+            <td>Jonas Winther</td>
+            <td>Odense</td>
+            <td>19-05-2021</td>
+          </tr>
+          <tr>
+            <td>SpaceX testing</td>
+            <td>Jonas Winther</td>
+            <td>Hawthorne</td>
+            <td>21-05-2021</td>
+          </tr>
+          <tr>
+            <td>Swedish testing facility</td>
+            <td>Jonas Winther</td>
+            <td>Malmö</td>
+            <td>22-05-2021</td>
+          </tr>
+          <tr>
+            <td>American Antenna testing</td>
+            <td>Jonas Winther</td>
+            <td>Boston</td>
+            <td>23-05-2021</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="js/dropdown.js"></script>
+    <script src="js/carousel.js"></script>
+  </body>
+</html>

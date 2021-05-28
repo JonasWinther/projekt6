@@ -1,0 +1,61 @@
+@charset "utf-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -webkit-pictograph;
+}
+
+header p span {
+  font-size: 40px;
+  margin: 0 5px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  line-height: 22px;
+  text-align: center;
+  border-radius: 3px;
+  background: #0d76bd;
+  color: white;
+}
+
+section {
+  display: flex;
+  overflow-x: auto;
+  column-gap: 2%;
+}
+section::-webkit-scrollbar {
+  display: none;
+}
+section .card {
+  position: relative;
+  left: 0;
+  transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+  .text h1 {
+    font-size: 35px;
+  }
+  .text p {
+    width: 90%;
+  }
+  header h1 {
+    font-size: 25px;
+  }
+  header p span {
+    font-size: 30px;
+  }
+  section .product {
+    min-width: 49%;
+    margin: 0 10px 0 0;
+  }
+  .detail,
+  .button {
+    font-size: 16px;
+  }
+  a {
+    padding: 6px 10px;
+  }
+}
