@@ -690,6 +690,16 @@ section .card {
   .calirightgrid3 {
     grid-template-columns: 25% 30% 5%;
   }
+  #missionlist .theader,
+  #missionlist td {
+    width: 250px;
+  }
+  #missionlist tbody {
+    height: 350px;
+  }
+  .overviewflex {
+    column-gap: 45%;
+  }
 }
 
 @media screen and (max-width: 1000px) {
