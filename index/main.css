@@ -488,6 +488,7 @@ section .card {
   border-radius: 50%;
   display: inline-block;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .innerdot {
@@ -674,4 +675,22 @@ section .card {
   justify-content: flex-end;
   column-gap: 27%;
   margin-bottom: 7%;
+}
+
+@media screen and (max-width: 1500px) {
+  .navigationflex {
+    width: 50%;
+  }
+  #createBtn {
+    margin-top: 1.5%;
+  }
+  .modalheaderflex {
+    column-gap: 5%;
+  }
+  .calirightgrid3 {
+    grid-template-columns: 25% 30% 5%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
 }
