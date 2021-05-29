@@ -397,7 +397,7 @@ section .card {
 }
 
 #connected {
-  color: green;
+  color: #00ca12;
   font-family: "Oswald", sans-serif;
   display: block;
   margin-top: 1%;
@@ -406,7 +406,7 @@ section .card {
 }
 
 #disconnected {
-  color: red;
+  color: #e12800;
   font-family: "Oswald", sans-serif;
   display: none;
   margin-top: 1%;
