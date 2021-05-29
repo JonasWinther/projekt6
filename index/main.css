@@ -686,6 +686,7 @@ section .card {
   }
   .modalheaderflex {
     column-gap: 5%;
+    margin-bottom: 3%;
   }
   .calirightgrid3 {
     grid-template-columns: 25% 30% 5%;
@@ -698,9 +699,45 @@ section .card {
     height: 350px;
   }
   .overviewflex {
-    column-gap: 45%;
+    column-gap: 35%;
+    margin-top: 0;
+  }
+  .navigation {
+    height: 70px;
+  }
+  .carousel {
+    margin-top: -1%;
+  }
+  #missionlist {
+    margin-top: 70px;
+  }
+  .caliright {
+    margin-bottom: 15%;
   }
 }
 
 @media screen and (max-width: 1000px) {
+  .navigationflex {
+    width: 70%;
+  }
+  .overviewflex {
+    column-gap: 25%;
+    margin-top: 0;
+  }
+  .modalsetcontent {
+    width: 85%;
+  }
+  .createcontent h1 {
+    font-size: 35px;
+  }
+  #createinfo input {
+    width: 80%;
+  }
+  .mislist {
+    margin-left: 70.5px;
+  }
+  #missionlist .theader,
+  #missionlist td {
+    width: 220px;
+  }
 }
