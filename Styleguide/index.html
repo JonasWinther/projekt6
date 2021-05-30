@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>QuadSAT Styleguide</title>
+    <meta name="description" content="Styleguide til QuadSAT software" />
+    
+    <link rel="stylesheet" href="main.css" />
+    <script src="modalsettings.js" defer></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="navigationStyle">
+        <div class="navigationflex">
+          <img src="images/logo.png" alt="QuadSAT" />
+          <h2><a href="#navStart">Start</a></h2>
+          <h2><a href="#navFarve">Farver</a></h2>
+          <h2><a href="#navLogo">Logo</a></h2>
+          <h2><a href="#navKnapper">Knapper</a></h2>
+          <h2><a href="#navTypo">Typografi</a></h2>
+          <h2><a href="#navNav">Navigation</a></h2>
+        </div>
+      </div>
+    </nav>
+
+    <section id="navStart" class="startsection">
+      <h1>QuadSAT Styleguide</h1>
+      <p>
+        Denne styleguide har til formål at simplificere og skabe overblik over
+        det brugte materiale til forbedringsforslaget af QuadSAT's drone
+        software
+      </p>
+    </section>
+
+    <!--FARVER-->
+    <section id="navFarve" class="farverBorder">
+      <section class="farveSection" id="farveSection">
+        <h1>Farver</h1>
+        <article class="color" style="background-color: #0d76bd">
+          <div class="colorInfo white">
+            <div class="firstColon">
+              <p>Hex:</p>
+              <p>RGB:</p>
+              <p>CMYK:</p>
+            </div>
+            <div>
+              <p>#0d76bd</p>
+              <p>R:13 G:118 B:189</p>
+              <p>C:86 M:49 Y:0 K:0</p>
+            </div>
+          </div>
+        </article>
+        <article class="color" style="background-color: #58585a">
+          <div class="colorInfo white">
+            <div>
+              <p>Hex:</p>
+              <p>RGB:</p>
+              <p>CMYK:</p>
+            </div>
+            <div>
+              <p>#58585a</p>
+              <p>R:88 G:88 B:90</p>
+              <p>C:64 M:56 Y:53 K:28</p>
+            </div>
+          </div>
+        </article>
+        <article class="color" style="background-color: #00ca12">
+          <div class="colorInfo white">
+            <div>
+              <p>Hex:</p>
+              <p>RGB:</p>
+              <p>CMYK:</p>
+            </div>
+            <div>
+              <p>#00CA12</p>
+              <p>R:0 G:202 B:18</p>
+              <p>C:100 M:0 Y:91 K:21</p>
+            </div>
+          </div>
+        </article>
+        <article class="color" style="background-color: #e12800">
+          <div class="colorInfo white">
+            <div>
+              <p>Hex:</p>
+              <p>RGB:</p>
+              <p>CMYK:</p>
+            </div>
+            <div>
+              <p>#E12800</p>
+              <p>R:225 G:40 B:0</p>
+              <p>C:0 M:82 Y:100 K:12</p>
+            </div>
+          </div>
+        </article>
+        <article class="color" style="background-color: #ffffff">
+          <div class="colorInfo white">
+            <div>
+              <p>Hex:</p>
+              <p>RGB:</p>
+              <p>CMYK:</p>
+            </div>
+            <div>
+              <p>#ffffff</p>
+              <p>R:255 G:255 B:255</p>
+              <p>C:0 M:0 Y:0 K:0</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <!--Grafik-->
+
+    <!-- CODE SNIPPETS-->
+
+    <!--LOGO-->
+    <section id="navLogo" class="logoBorder">
+      <section class="logoSection">
+        <h1>Logo</h1>
+        <article class="logo">
+          <div class="logoGrid">
+            <img src="images/logo.png" alt="QuadSAT">
+          </div>
+          <div class="logoCode">
+            <p>&lt;img src="images/logo.png alt="QuadSAT"&gt;</p>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <!--KNAPPER-->
+    <section id="navKnapper" class="knapperBorder">
+      <section class="knapperSection">
+        <h1>Knapper</h1>
+        <article class="knapper">
+          <div class="knaptext">
+            <h2>Knap eksempel</h2>
+          </div>
+          <dic class="knaptext">
+            <h2>Kode eksempel</h2>
+          </dic>
+          <div class="knapGrid">
+            <div class="arrowgrid">
+              <span>&#139;</span>
+              <span>&#155;</span>
+            </div>
+          </div>
+          <div class="knapcode">
+            <p>&lt;span&gt;&# 139;&lt;/span&gt; (Rotated 90deg)</p>
+            <p>&lt;span&gt;&# 155;&lt;/span&gt; (Rotated 90deg)</p>
+          </div>
+          <div class="knapGrid">
+            <span class="dot"
+              ><span
+                style="background-color: rgb(255, 255, 255)"
+                id="azi"
+                class="innerdot"
+                onclick="azimuth()"
+              ></span
+            ></span>
+            <span class="dot">
+              <span
+                style="background-color: rgb(255, 255, 255)"
+                id="ele"
+                class="innerdot"
+                onclick="elevation()"
+              >
+              </span
+            ></span>
+          </div>
+          <div class="knapcode">
+            <p>&lt;span class="dot"&gt;&lt;span
+                style="background-color: rgb(255, 255, 255)"
+                id="azi"
+                class="innerdot"
+                onclick="azimuth()"&gt;&lt;/span&gt;&lt;/span&gt;</p><br>
+                <p>&lt;span class="dot"&gt;&lt;span
+                style="background-color: rgb(255, 255, 255)"
+                id="ele"
+                class="innerdot"
+                onclick="elevation()"&gt;&lt;/span&gt;&lt;/span&gt;</p>
+          </div>
+          <div class="knapGrid">
+            <div class="bottommodal">
+              <div id="save" class="save">
+                <h2>Save Changes</h2>
+              </div>
+              <div id="cancel" class="cancel">
+                <h2>Cancel</h2>
+              </div>
+            </div>
+          </div>
+          <div class="knapcode">
+            <p>&lt;div id="save" class="save"&gt;&lt;h2&gt;Save Changes&lt;/h2&gt;&lt;/div&gt;</p><br>
+            <p>&lt;div id="cancel" class="cancel"&gt;&lt;h2&gt;Cancel&lt;/h2&gt;&lt;/div&gt;</p>
+          </div>
+          <div class="knapGrid">
+            <div class="container">
+              <button class="click">Sort by...</button>
+
+              <div id="dropdown" class="list">
+                <button class="links">Newest</button>
+
+                <button class="links">Oldest</button>
+
+                <button onclick="sortList1()" class="links">A-Z</button>
+              </div>
+            </div>
+          </div>
+          <div class="knapcode">
+            <p>&lt;div class="container"&gt;</p>
+            <p>&lt;button class="click"&gt;Sort by...&lt;/button&gt;</p>
+            <p>&lt;div id="dropdown" class="list"&gt;</p>
+            <p>&lt;button class="links"&gt;Newest&lt;/button&gt;</p>
+            <p>&lt;button class="links"&gt;Oldest&lt;/button&gt;</p>
+            <p>&lt;button onclick="sortList1()" class="links"&gt;A-Z&lt;/button&gt;</p>
+            <p>&lt;/div&gt;</p>
+            <p>&lt;/div&gt;</p>
+          </div>
+          <div class="knapGrid">
+            <div class="btns">
+              <div
+                id="m1Launch"
+                class="setbtn"
+                onclick="openLaunch('Quadsat testing 1')"
+              >
+                <img class="setimg" src="images/launchblue.png" alt="Launch" />
+              </div>
+              <div
+                id="m1Btn"
+                class="setbtn"
+                onclick="openModal('Quadsat testing 1', 'Odense', 'Jonas Winther', '18-05-2021')"
+              >
+                <img
+                  class="setimg"
+                  src="images/settingsblue.png"
+                  alt="Settings"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="knapcode">
+            <p>&lt;div id="m1Lauch" class="setbtn" onclick="openLaunch('Quadsat testing 1')"&gt;</p>
+            <p>&lt;img class="setimg" src="images/launchblue.png" alt="Launch"/&gt;</p><br>
+            <p>&lt;div id="m1Btn" class="setbtn" onclick="openModal('Quadsat testing 1', 'Odense', 'Jonas Winther', '18-05-2021')"&gt;</p>
+            <p>&lt;img class="setimg" src="images/settingsblue.png" alt="Settings"/&gt;</p>
+          </div>
+          <div class="knapGrid">
+            <div class="carousel">
+              <span class="arrow">&#139;</span>
+              <span class="arrow">&#155;</span>
+            </div>
+          </div>
+          <div class="knapcode">
+            <p>&lt;span class="arrow"&gt;&# 139;&lt;/span&gt;</p>
+            <p>&lt;span class="arrow"&gt;&# 155;&lt;/span&gt;</p>
+          </div>
+          <div class="knapGrid">
+            <div id="createBtn" onclick="openCreate()">
+              <img src="images/create.png" alt="create" class="createBtn" />
+            </div>
+          </div>
+          <div class="knapcode">
+            <p>&lt;div id="createBtn" onclick="openCreate()"&gt;<br>
+            &lt;img src="images/create.png" alt="create" class="createBtn"/&gt;<br>&lt;/div&gt;</p>
+          </div>
+          <div class="knapGrid">
+            <div class="modalsetcontent">
+              <div class="modalheaderflex">
+                <div id="missioninformation" onclick="misinfo()">
+                  <h2 id="mish2">Mission Information</h2>
+                </div>
+                <div id="droneinfo" onclick="droneinfo()">
+                  <h2 id="droneh2">Drone Information</h2>
+                </div>
+                <div id="calibrations" onclick="calibrations()">
+                  <h2 id="calih2">Calibrations</h2>
+                </div>
+                <span class="closemodal">&times;</span>
+              </div>
+            </div>
+          </div>
+          <div class="knapcode">
+            <p>&lt;div id="missioninformation" onclick="misinfo()"&gt;<br>
+            &lt;h2 id="mish2"&gt;Mission Information&lt;/h2&gt;<br>&lt;/div&gt;</p><br>
+            <p>&lt;div id="droneinfo" onclick="droneinfo()"&gt;<br>
+            &lt;h2 id="droneh2"&gt;Drone Information&lt;/h2&gt;<br>&lt;/div&gt;</p><br>
+            <p>&lt;div id="calibrations" onclick="calibrations()"&gt;<br>
+            &lt;h2 id="calih2"&gt;Calibrations&lt;/h2&gt;<br>&lt;/div&gt;</p><br>
+            <p>&lt;span class="closemodal"&gt;& times;&lt;/span&gt;</p>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <!-- TYPOGRAFI-->
+    <section id="navTypo" class="typoBorder">
+      <section class="typoSection">
+        <h1>Typografi</h1>
+        <article class="typo">
+          <h1>Aa - H1-tag, 400 Oswald, 50px</h1>
+          <br>
+          <h2>Aa - H2-tag, 400 Oswald, 30px</h2>
+          <br>
+          <p>Aa - P-tag, 400 Lato, 25px</p>
+        </article>
+      </section>
+    </section>
+    <!-- CODE SNIPPETS-->
+
+    <!--Navigation-->
+    <section id="navNav" class="navBorder">
+      <section class="navSection">
+        <h1>Navigation</h1>
+        <article class="nav">
+          <div class="navigation">
+            <div class="navigationflex">
+              <img src="images/logo.png" alt="QuadSAT" />
+              <h2 id="view" onclick="overview()">Mission Overview</h2>
+              <h2 id="mislist" onclick="overviewlist()">Mission List</h2>
+            </div>
+          </div>
+          <div class="navcode">
+            <h2>Kode eksempel</h2><br>
+            <p>&lt;div class="navigationflex"&gt;<br>
+            &lt;img src="images/logo.png" alt QuadSAT/&gt;<br>
+            &lt;h2 id="view" onclick="overview()"&gt;Mission Overview&lt;/h2&gt;<br>
+            &lt;h2 id="mislist" onclick="overviewlist()"&gt;Mission List&lt;/h2&gt;<br>&lt;/div&gt;</p>
+          </div>
+        </article>
+      </section>
+    </section>
+    <script src="dropdown.js"></script>
+    <script src="modalsettings.js"></script>
+  </body>
+</html>
