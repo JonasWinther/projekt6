@@ -6,12 +6,7 @@ var cancel = document.getElementById("cancel");
 
 var save = document.getElementById("save");
 
-function openModal(
-  title,
-  location = "Odense",
-  operator = "Jonas Winther",
-  date = new Date().toString()
-) {
+function openModal(title, location = "Odense", operator = "Jonas Winther", date = new Date().toString()) {
   document.querySelector("#missionName").innerHTML = title;
   document.querySelector("#missionLoca").innerHTML = location;
   document.querySelector("#missionOper").innerHTML = operator;
