@@ -183,7 +183,6 @@ function droneinfo() {
     caliinform.style.backgroundColor = "#0d76bd";
     caliinform.style.color = "#ffffff";
   } else {
-    console.log("else halloooooo");
     misinformation.style.display = "none";
     droneinformation.style.display = "grid";
     calibrationinformation.style.display = "none";
@@ -208,7 +207,6 @@ function calibrations() {
     caliinform.style.backgroundColor = "#ffffff";
     caliinform.style.color = "#0d76bd";
   } else {
-    console.log("else halloooooo");
     misinformation.style.display = "none";
     droneinformation.style.display = "none";
     calibrationinformation.style.display = "grid";
